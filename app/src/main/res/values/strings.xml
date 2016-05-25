@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Application Lifecycle</string>
+    <string name="label_start_second_activity">Start second activity</string>
+    <string name="label_start_service">Start service</string>
+    <string name="label_bind_service">Bind service</string>
+    <string name="label_stop_service">Stop service</string>
+    <string name="label_unbind_service">Unbind service</string>
+    <string name="label_finish_activity">Finish activity</string>
+    <string name="label_first_activity">First Activity</string>
+</resources>

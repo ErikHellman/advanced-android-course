@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="se.hellsoft.architecture.TaskActivity">
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:maxLines="1"
+        android:inputType="textAutoComplete|textAutoCorrect"
+        style="@style/Widget.Design.TextInputLayout"
+        tools:text="Title"/>
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:inputType="textAutoComplete|textAutoCorrect|textCapSentences|textMultiLine"
+        style="@style/Widget.Design.TextInputLayout"
+        tools:text="Description of the task\nwith multiple lines.\nAnother line."/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:text="@string/label_save"
+        android:onClick="doSaveTask"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.Button"
+        android:text="@string/label_delete"
+        android:onClick="doDelete"/>
+
+</LinearLayout>

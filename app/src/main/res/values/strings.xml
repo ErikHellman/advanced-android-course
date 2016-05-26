@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Threads &amp; Concurrency</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="label_save">Save</string>
+    <string name="label_delete">Delete</string>
+</resources>

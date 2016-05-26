@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_styles_and_themes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="se.hellsoft.userinterface.StylesAndThemesActivity">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/activity_styles_and_themes"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintTop_creator="1"/>
+
+    <EditText
+        android:text="EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        app:layout_constraintRight_toRightOf="@+id/activity_styles_and_themes"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintTop_creator="1"/>
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:text="CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintTop_creator="1"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/activity_styles_and_themes"
+        tools:layout_constraintRight_creator="1"/>
+
+    <Switch
+        android:text="Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch1"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        android:layout_marginTop="13dp"
+        tools:layout_constraintTop_creator="1"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintTop_creator="1">
+
+        <RadioButton
+            android:text="RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton5"
+            android:layout_weight="1"
+            android:checked="true"/>
+
+        <RadioButton
+            android:text="RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton4"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:text="RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton3"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <SeekBar
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar4"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_styles_and_themes"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
+        app:layout_constraintRight_toRightOf="@+id/activity_styles_and_themes"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_text"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="se.hellsoft.userinterface.TextActivity">
+
+    <TextView
+        android:text="Hello, World!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hellow_world_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_text"
+        app:layout_constraintTop_toTopOf="@+id/activity_text"
+        android:layout_marginTop="16dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_text"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_text"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintVertical_bias="0.060000002"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ipsum_lorem_text"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_text"
+        app:layout_constraintTop_toTopOf="@+id/activity_text"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_text"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <TextView
+        android:text="Quotation is a serviceable substitute for wit."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quote_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_text"
+        app:layout_constraintRight_toRightOf="@+id/activity_text"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_text"
+        android:layout_marginBottom="196dp"
+        tools:layout_constraintBottom_creator="1"/>
+
+    <TextView
+        android:text="Oscar Wilde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintTop_toBottomOf="@+id/quote_text"
+        android:layout_marginTop="2dp"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/quote_text"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp"
+        tools:layout_constraintRight_creator="1"/>
+</android.support.constraint.ConstraintLayout>

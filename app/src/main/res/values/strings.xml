@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">User Interface</string>
+    <string name="hipster_lorem">Meh tumblr cray yuccie, gentrify craft beer actually slow-carb listicle ennui keffiyeh kinfolk. Meggings tacos +1 hashtag heirloom, skateboard tousled. Umami kinfolk franzen fashion axe. Schlitz master cleanse leggings meggings godard. Pop-up kale chips chartreuse lomo, VHS tofu put a bird on it pour-over man braid mlkshk helvetica actually lumbersexual. VHS tote bag celiac street art disrupt, artisan gochujang bicycle rights food truck stumptown pabst normcore chicharrones cold-pressed small batch. Church-key aesthetic cliche swag gastropub tote bag paleo migas offal truffaut kogi.</string>
+    <string name="recycler_view">Recycler View</string>
+</resources>

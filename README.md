@@ -22,11 +22,13 @@ Next, add the `android:launchMode` attribute to the manifest for this Activity a
 
 ## Fragments
 
-Create one Fragment for each Activity and move the UI to those. Add `@DebugLog` to all the lifecycle methods and see how they relate to the lifecycle of the Activity.
+Fragments also have a lifecycle that is tied to the Activity that adds it. However, this lifecycle is slightly more complicated, which we will soon see. In this part of the lab we will ignore `SecondActivity` and only use `FirstActivity`. For this lab we will use the fragment API from the support-library as that one will always contain the latest bug fixes and features.
 
-Create a second Fragment that will display a single button and add a button to the first fragment that will display this. When pressing the button in the new Fragment you should display a dialog (using a DialogFragment). Remember to use `@DebugLog` for the lifecycle callbacks on all Fragments and notice how they are called.
+Start by creating a `Fragment` that only displays a single button. This means implementing the `onCreateView()` to display this layout. Also implement the remaining lifecycle methods on this `Fragment` and add `@DebugLog` to those so that we can see how they are being called by the framework.
 
-Create an `AsyncTask` that sleeps for 10 seconds and then completes. This task will start by displaying the dialog fragment and dispose it once it is completed. Discuss and test what happens if the Fragment and Activity will be destroyed before the task is completed. How would you fix this?
+Now, create a second `Fragment` that will display a single button and connect the button in the first `Fragment` to replace itself with this one. In the second `Fragment`, display a button that will display a dialog (using a `DialogFragment` that returns an `AlertDialog`) with a title, message and an OK button (also, make it non-cancellable). Remember to use `@DebugLog` for the lifecycle callbacks and notice how they are called.
+
+When the OK button is pressed, start an `AsyncTask` that simulates a background operation (using `SystemClock.sleep()`) which will dismiss the dialog once completed. Use a delay long enough to allow for user interaction and rotate the device. Notice the bug and think of a simple way to solve it.
 
 ## Services
 
@@ -61,5 +63,3 @@ Instead of using an `Application` to do global app initialisation, think of how 
 Create a class implementing the `ActivityLifecycleCallbacks` interface. Register an instance of this class in the `onCreate()` method of your custom `Application`. Add `@DebugLog` to the methods and note how they are called when move between activities and in and out of the application.
 
 Discuss when this callback interface can be useful.
-
-

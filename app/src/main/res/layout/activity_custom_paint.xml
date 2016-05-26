@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_custom_paint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="se.hellsoft.advancedgraphics.CustomPaintActivity">
+
+    <TextView
+        android:text="Hello, World!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_custom_paint"
+        app:layout_constraintTop_toTopOf="@+id/activity_custom_paint"
+        android:layout_marginTop="16dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_custom_paint"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_custom_paint"
+        android:layout_marginBottom="16dp"/>
+</android.support.constraint.ConstraintLayout>

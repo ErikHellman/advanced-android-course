@@ -6,7 +6,7 @@ The code labs are placed in separate branches and currently the following are av
 
 * [Build Tools](https://github.com/ErikHellman/advanced-android-course/tree/build-tools)
 * [Application Lifecycle](https://github.com/ErikHellman/advanced-android-course/tree/application-lifecycle)
-* [Multithreading and Concurrency](https://github.com/ErikHellman/advanced-android-course/tree/multithreading-concurrency)
+* [Multithreading and Concurrency](https://github.com/ErikHellman/advanced-android-course/tree/multithreading-and-concurrency)
 * [Application Architecture](https://github.com/ErikHellman/advanced-android-course/tree/application-architecture)
 * [User Interface](https://github.com/ErikHellman/advanced-android-course/tree/user-interface)
 * [Image handling](https://github.com/ErikHellman/advanced-android-course/tree/image-handling)

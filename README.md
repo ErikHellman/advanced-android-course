@@ -20,3 +20,8 @@ In the first part of this lab, implement an async wrapper for the `FakeRepositor
 
 Another approach is to use `Loaders` for loading data. Implement the same async behavior as with `Handler` and `HandlerThread` using a custom `Loader` instead. As in the previous section, use the thread annotations where it is possible.
 
+## RxJava
+
+Another option for performing async operations is by using RxJava, the Java implementation of Reactive Extensions pattern. This frameworks uses the pattern of Observer/Observable together with streams of events to create a very competent solution for asynchronous programming. There are several extensions on top of RxJava that leverages the advantages of Reactive Extensions and integrates it nicely into Android. Although RxJava has a higher threshold than the other two options in this lab, it is also the most competent and will be used in later code labs as well.
+
+The task in this part of the lab is to use RxJava to solve the async problem with this application. You will need to add both RxJava and RxAndroid in order to complete this task.

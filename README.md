@@ -9,7 +9,7 @@ The code labs are placed in separate branches and currently the following are av
 * [Multithreading and Concurrency](https://github.com/ErikHellman/advanced-android-course/tree/multithreading-and-concurrency)
 * [Application Architecture](https://github.com/ErikHellman/advanced-android-course/tree/application-architecture)
 * [User Interface](https://github.com/ErikHellman/advanced-android-course/tree/user-interface)
-* [Image handling](https://github.com/ErikHellman/advanced-android-course/tree/image-handling)
+* [Advanced Graphics](https://github.com/ErikHellman/advanced-android-course/tree/advanced-graphics)
 * [Persistence and Serialisation](https://github.com/ErikHellman/advanced-android-course/tree/persistence-serialisation)
 * [Networking and Web APIs](https://github.com/ErikHellman/advanced-android-course/tree/networking-webapi)
 * [Data Synchronization](https://github.com/ErikHellman/advanced-android-course/tree/data-sync)

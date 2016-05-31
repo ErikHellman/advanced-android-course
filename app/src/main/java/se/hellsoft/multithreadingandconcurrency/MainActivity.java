@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
     private class TaskListAdapter extends RecyclerView.Adapter<TaskViewHolder> {
         @Override
         public TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new TaskViewHolder(View.inflate(MainActivity.this, R.layout.task_item, null));
+            View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.task_item, parent, false);
+            return new TaskViewHolder(view);
         }
 
         @Override

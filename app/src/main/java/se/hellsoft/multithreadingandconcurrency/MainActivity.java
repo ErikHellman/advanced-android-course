@@ -2,7 +2,13 @@ package se.hellsoft.multithreadingandconcurrency;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.support.annotation.MainThread;
+import android.support.annotation.WorkerThread;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.AsyncTaskLoader;
+import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,12 +21,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import se.hellsoft.multithreadingandconcurrency.model.FakeRepository;
 import se.hellsoft.multithreadingandconcurrency.model.Task;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Task>>{
     private TaskListAdapter taskListAdapter;
     private List<Task> taskList = new ArrayList<>(); // Default empty
 
@@ -48,12 +55,14 @@ public class MainActivity extends AppCompatActivity {
         taskList.setHasFixedSize(true);
         taskListAdapter = new TaskListAdapter();
         taskList.setAdapter(taskListAdapter);
+
+        getSupportLoaderManager().initLoader(1, null, this).forceLoad();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        setTaskList(FakeRepository.getInstance().getTasks());
+//        setTaskList(FakeRepository.getInstance().getTasks());
     }
 
     @Override
@@ -70,6 +79,31 @@ public class MainActivity extends AppCompatActivity {
     public void setTaskList(List<Task> taskList) {
         this.taskList = taskList;
         taskListAdapter.notifyDataSetChanged();
+    }
+
+
+    @MainThread
+    @Override
+    public Loader<List<Task>> onCreateLoader(int id, Bundle args) {
+        return new AsyncTaskLoader<List<Task>>(this) {
+            @WorkerThread
+            @Override
+            public List<Task> loadInBackground() {
+                return FakeRepository.getInstance().getTasks();
+            }
+        };
+    }
+
+    @MainThread
+    @Override
+    public void onLoadFinished(Loader<List<Task>> loader, List<Task> data) {
+        setTaskList(data);
+    }
+
+    @MainThread
+    @Override
+    public void onLoaderReset(Loader<List<Task>> loader) {
+        setTaskList(Collections.<Task>emptyList());
     }
 
     private class TaskListAdapter extends RecyclerView.Adapter<TaskViewHolder> {

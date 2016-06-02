@@ -3,7 +3,6 @@ package se.hellsoft.multithreadingandconcurrency;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -17,16 +16,22 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.hellsoft.multithreadingandconcurrency.model.FakeRepository;
+import javax.inject.Inject;
+
 import se.hellsoft.multithreadingandconcurrency.model.Task;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements TasksContract.View {
     private TaskListAdapter taskListAdapter;
     private List<Task> taskList = new ArrayList<>(); // Default empty
+
+    @Inject
+    TasksContract.Presenter tasksPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((MyApp) getApplication()).getPresenterComponent().inject(this);
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -53,7 +58,16 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setTaskList(FakeRepository.getInstance().getTasks());
+
+        tasksPresenter.start(this);
+        tasksPresenter.loadTasks();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        tasksPresenter.stop();
+        tasksPresenter = null;
     }
 
     @Override
@@ -67,7 +81,8 @@ public class MainActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setTaskList(List<Task> taskList) {
+    @Override
+    public void showTasks(List<Task> tasks) {
         this.taskList = taskList;
         taskListAdapter.notifyDataSetChanged();
     }

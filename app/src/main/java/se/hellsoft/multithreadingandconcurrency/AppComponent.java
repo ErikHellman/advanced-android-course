@@ -1,9 +1,12 @@
 package se.hellsoft.multithreadingandconcurrency;
 
-import dagger.Component;
+import javax.inject.Singleton;
 
+import dagger.Component;
+import se.hellsoft.multithreadingandconcurrency.model.Repository;
+
+@Singleton
 @Component(modules = AppModule.class)
 public interface AppComponent {
-    void inject(BaseActivity baseActivity);
-
+    Repository repository();
 }

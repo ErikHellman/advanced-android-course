@@ -26,7 +26,7 @@ public class FakeRepository implements Repository {
         }
     }
 
-    public synchronized static FakeRepository getInstance() {
+    public synchronized static FakeRepository getInstance(String httpUrl, String apiPath) {
         if (INSTANCE == null) {
             INSTANCE = new FakeRepository();
         }

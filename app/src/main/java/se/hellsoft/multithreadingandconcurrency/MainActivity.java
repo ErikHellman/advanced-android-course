@@ -20,7 +20,7 @@ import java.util.List;
 import se.hellsoft.multithreadingandconcurrency.model.FakeRepository;
 import se.hellsoft.multithreadingandconcurrency.model.Task;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private TaskListAdapter taskListAdapter;
     private List<Task> taskList = new ArrayList<>(); // Default empty
 

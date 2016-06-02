@@ -8,7 +8,7 @@ import android.widget.TextView;
 import se.hellsoft.multithreadingandconcurrency.model.FakeRepository;
 import se.hellsoft.multithreadingandconcurrency.model.Task;
 
-public class TaskActivity extends AppCompatActivity {
+public class TaskActivity extends BaseActivity {
     public static final String EXTRA_TASK_ID = "taskId";
     private Task task;
     private TextView titleView;
@@ -31,7 +31,7 @@ public class TaskActivity extends AppCompatActivity {
 
     private void loadTask(long taskId) {
         if (taskId != -1) {
-            task = FakeRepository.getInstance().getTask(taskId);
+            task = repository.getTask(taskId);
             if (task == null) {
                 finish();
             } else {
@@ -52,13 +52,13 @@ public class TaskActivity extends AppCompatActivity {
     public void doSaveTask(View view) {
         task.title = titleView.getText().toString();
         task.description = descriptionView.getText().toString();
-        FakeRepository.getInstance().saveTask(task);
+        repository.saveTask(task);
         finish();
     }
 
 
     public void doDelete(View view) {
-        FakeRepository.getInstance().deleteTask(task);
+        repository.deleteTask(task);
         finish();
     }
 }
